@@ -4,6 +4,8 @@ import { useEffect } from 'react';
 import { fetchData } from '../redux/weatherSlice';
 import moment from 'moment';
 import { IconButton } from '@mui/material';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 function WeatherCard() {
   const dateAndTime = moment().format('LLLL');
@@ -12,18 +14,20 @@ function WeatherCard() {
 
   useEffect(() => {
     // Provide a default city name for the initial fetch
-    dispatch(fetchData({ cityName: "ifrane" }));
+    dispatch(fetchData());
   }, [dispatch]);
 
   // Handle loading or undefined data
   if (!data) {
     return (
       <div className="w-[90%] max-w-[23rem] h-[28rem] md:h-[32rem] glassCard p-4 flex justify-center items-center mx-auto">
-        <p>Loading...</p>
+       <p>
+          <CircularProgress color='blue'/>
+        </p>
       </div>
     );
   }
-
+console.log("the city name is" ,data.city);
   return (
     <div className="w-[90%] max-w-[23rem] h-[28rem] md:h-[32rem] glassCard p-4 mx-auto">
       <div className="flex w-full justify-center items-center gap-4 mt-6 md:mt-8 mb-2">
@@ -32,12 +36,13 @@ function WeatherCard() {
             {data.clouds}&deg;C
           </p>
           <IconButton>
-            <img
-              src={`http://openweathermap.org/img/wn/${data.iconWeather}@2x.png`}
-              alt="Weather Icon"
-              className="w-12 h-12 md:w-16 md:h-16"
-            />
-          </IconButton>
+  <img
+    src={`http://openweathermap.org/img/wn/${data.iconWeather}@2x.png`}
+    alt="Weather Icon"
+    className="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20"
+  />
+</IconButton>
+
         </div>
       </div>
       <div className="font-bold text-center text-2xl md:text-3xl">

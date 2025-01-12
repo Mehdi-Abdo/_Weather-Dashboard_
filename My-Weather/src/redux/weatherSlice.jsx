@@ -26,6 +26,7 @@ export const fetchData = createAsyncThunk(
         weatherTitle: data.weather[0].main,
         iconWeather: data.weather[0].icon,
       };
+        
     } catch (error) {
       console.error("Error fetching current weather data:", error);
       return rejectWithValue(

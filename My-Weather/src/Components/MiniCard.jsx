@@ -40,7 +40,7 @@ export default function MiniCard() {
           className="glassCard  flex-shrink-0 justify-between items-center m-2 min-w-[10rem] max-w-[12rem] h-[10rem] p-4 flex flex-col"
         >
           {/* Add day name */}
-          <p className="text-center text-2xl mb-2 ">{dayName}</p>
+          <p className="text-center text-2xl mb-2 font-bold ">{dayName}</p>
           <hr className="bg-white w-full" />
           <div className="w-full flex justify-center items-center flex-1">
             <img
@@ -57,10 +57,10 @@ export default function MiniCard() {
   return (
     <div className="w-full mx-auto py-4">
       {/* Add the title */}
-      <h2 className="text-start text-4xl pl-8 text-white font-bold mb-4">
-        Next 5 Days
+      <h2 className="title text-center  text-5xl ml-8 text-white font-bold mb-4">
+        Next 7-Days
       </h2>
-      <div className="daysCard flex flex-wrap lg:flex-wrap gap-x-4">
+      <div className="daysCard flex flex-wrap lg:flex-wrap gap-x-4 ">
         {cards}
       </div>
     </div>

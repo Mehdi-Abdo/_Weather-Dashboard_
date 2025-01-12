@@ -58,18 +58,49 @@ scale:1.5;
 }
 
 /* responsive ui design  */
+/* mobile */
 @media (max-width: 767px) {
 .daysCard {
  flex-wrap: nowrap;
  overflow-x: scroll;
 }
+.header {
+  display: flex;
+  row-gap: 25%;
+
+}
 }
 
-@media (min-width:768px) {
+
+
+/* Medium screens (tablet) */
+@media (min-width: 768px) and (max-width: 1024px) {
   .daysCard {
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
     align-items: center;
     justify-content: center;
    }
+   .title {
+    font-size: xx-large;
+    margin-bottom: 30px;
+   
+    
+   }
+}
 
+/* Large screens (desktop) */
+@media (min-width: 1025px) {
+  .title {
+    align-items: center;
+    justify-content: center;
+  }
+  .daysCard{
+    align-items: center;
+    justify-content: center;
+  }
+  .miniCard {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
 }

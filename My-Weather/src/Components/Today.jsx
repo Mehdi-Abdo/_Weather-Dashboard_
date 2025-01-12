@@ -16,16 +16,7 @@ export default function Today() {
 
   return (
     <div
-      className=" miniCard
-      flex
-        flex-nowrap
-        gap-4
-        overflow-x-auto 
-        sm:justify-start
-        md:justify-between
-        lg:grid 
-        lg:grid-cols-4
-        xl:grid-cols-5"
+      className="miniCard flex flex-nowrap md:flex-row sm:overflow-x-auto gap-4 p-4"
     >
       {hoursData.map((data, index) => (
         <div
